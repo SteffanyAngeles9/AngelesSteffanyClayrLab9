@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     TextView Fullname, Age, Gender;
 
     int index, in;
+    String str="";
     ArrayList<String> keyList,name, age, gender;
 
     @Override
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     keyList.add(ss.getKey());
                 }
                 in = (int) dataSnapshot.getChildrenCount() - 1;
-                for(int i = 0; i < in; i++) {
+                for(int i = 0; i <= in; i++) {
                      name.add(dataSnapshot.child(keyList.get(i)).child("fullName").getValue().toString());
                     //keyList.add(ss.getKey());
                 }
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                if(isOk == true){
+                if(isOk){
                     String key = details.push().getKey();
                     Person pers = new Person(fullName1, age1, gender1);
                     details.child(key).setValue(pers);
@@ -102,19 +103,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void search(View v){
-        details.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                index = (int) dataSnapshot.getChildrenCount() - 1;
-                Fullname.setText(dataSnapshot.child(keyList.get(index)).child("fullName").getValue().toString());
-                Age.setText(dataSnapshot.child(keyList.get(index)).child("age").getValue().toString());
-                Gender.setText(dataSnapshot.child(keyList.get(index)).child("gender").getValue().toString());
+        String fname;
+        fname = eFullname.getText().toString();
+        for(int i = 0; i < name.size(); i++){
+            if(name.get(i).equals(fname)){
+                index = i;
+                str = "success";
             }
+        }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+        if(str.isEmpty()){
+            Toast.makeText(this, "Data does not exist", Toast.LENGTH_LONG).show();
+        }else{
+            details.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Fullname.setText(dataSnapshot.child(keyList.get(index)).child("fullName").getValue().toString());
+                    Age.setText(dataSnapshot.child(keyList.get(index)).child("age").getValue().toString());
+                    Gender.setText(dataSnapshot.child(keyList.get(index)).child("gender").getValue().toString());
+                }
 
-            }
-        });
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
+
     }
 }
