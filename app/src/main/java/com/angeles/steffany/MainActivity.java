@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         details.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                index = keyList.size();
+                index = (int) dataSnapshot.getChildrenCount() - 1;
                 Person person = dataSnapshot.child(keyList.get(index)).getValue(Person.class);
                 Fullname.setText(person.getFullName());
                 Age.setText(person.getAge().toString());
