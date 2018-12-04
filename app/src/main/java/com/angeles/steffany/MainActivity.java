@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     TextView Fullname, Age, Gender;
 
     int index, in;
-    ArrayList<String> keyList,name;
+    ArrayList<String> keyList,name, age, gender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,12 +53,11 @@ public class MainActivity extends AppCompatActivity {
                 for(DataSnapshot ss: dataSnapshot.getChildren()) {
                     keyList.add(ss.getKey());
                 }
-
-//                for(int i = 0; i < keyList.size(); i++) {
-//                    Person p = dataSnapshot.child(keyList.get(i)).getValue(Person.class);
-//                    name.add(p.getFullName());
-//                    //keyList.add(ss.getKey());
-//                }
+                in = (int) dataSnapshot.getChildrenCount() - 1;
+                for(int i = 0; i < in; i++) {
+                     name.add(dataSnapshot.child(keyList.get(i)).child("fullName").getValue().toString());
+                    //keyList.add(ss.getKey());
+                }
             }
 
             @Override
@@ -79,11 +78,11 @@ public class MainActivity extends AppCompatActivity {
                 age1 = Integer.parseInt(eAge.getText().toString().trim());
                 gender1 = eGender.getText().toString();
 
-//                for(int i =0; i < name.size(); i++){
-//                    if(name.get(i).equals(fullName1)){
-//                        isOk = false;
-//                    }
-//                }
+                for(int i =0; i < name.size(); i++){
+                    if(name.get(i).equals(fullName1)){
+                        isOk = false;
+                    }
+                }
 
                 if(isOk == true){
                     String key = details.push().getKey();
