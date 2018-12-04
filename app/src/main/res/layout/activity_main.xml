@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="102dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="33dp"
+        android:text="Full Name :"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/eFName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="102dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="Age :"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/eAge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="102dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="38dp"
+        android:text="Gender : "
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/eGender"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/eFName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/eAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eFName" />
+
+    <EditText
+        android:id="@+id/eGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eAge" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="59dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="59dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="56dp"
+        android:onClick="search"
+        android:text="Search"
+        app:layout_constraintEnd_toStartOf="@+id/saveButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="74dp"
+        android:layout_marginRight="74dp"
+        android:layout_marginTop="57dp"
+        android:onClick="save"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eGender" />
+
+    <TextView
+        android:id="@+id/fullname"
+        android:layout_width="281dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginLeft="61dp"
+        android:layout_marginRight="42dp"
+        android:layout_marginStart="61dp"
+        app:layout_constraintBottom_toTopOf="@+id/age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="161dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="19dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginRight="95dp"
+        android:layout_marginStart="128dp"
+        app:layout_constraintBottom_toTopOf="@+id/gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/gender"
+        android:layout_width="157dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginRight="99dp"
+        android:layout_marginStart="128dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>

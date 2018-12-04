@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "204070544857",
+    "firebase_url": "https://angelessteffanylab9.firebaseio.com",
+    "project_id": "angelessteffanylab9",
+    "storage_bucket": "angelessteffanylab9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204070544857:android:837d04c5b9cde772",
+        "android_client_info": {
+          "package_name": "com.angeles.steffany"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204070544857-rkgq4dig6l07e6n2134l7odrsv91vhj9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.angeles.steffany",
+            "certificate_hash": "54523cd576524a8c950b237d8e53a9149ca20452"
+          }
+        },
+        {
+          "client_id": "204070544857-t91l8j7vm1p7r6g8ca5pil0ehtgmlg4c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1BRpPQechCkWQuY9wKCnYPcMo5eE-SsM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204070544857-t91l8j7vm1p7r6g8ca5pil0ehtgmlg4c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
