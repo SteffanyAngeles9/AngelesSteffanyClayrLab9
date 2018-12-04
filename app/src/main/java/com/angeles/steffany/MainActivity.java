@@ -106,10 +106,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 index = (int) dataSnapshot.getChildrenCount() - 1;
-                Person person = dataSnapshot.child(keyList.get(index)).getValue(Person.class);
-                Fullname.setText(person.getFullName());
-                Age.setText(person.getAge().toString());
-                Gender.setText(person.getGender());
+                Fullname.setText(dataSnapshot.child(keyList.get(index)).child("fullName").getValue().toString());
+                Age.setText(dataSnapshot.child(keyList.get(index)).child("age").getValue().toString());
+                Gender.setText(dataSnapshot.child(keyList.get(index)).child("gender").getValue().toString());
             }
 
             @Override
