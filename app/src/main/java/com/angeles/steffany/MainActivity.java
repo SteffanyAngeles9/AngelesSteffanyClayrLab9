@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                     Person pers = new Person(fullName1, age1, gender1);
                     details.child(key).setValue(pers);
                     keyList.add(key);
+                    name.add(fullName1);
                     Toast.makeText(this, "Data saved", Toast.LENGTH_LONG).show();
                 }else{
                     Toast.makeText(this, "Full Name already exist", Toast.LENGTH_LONG).show();
